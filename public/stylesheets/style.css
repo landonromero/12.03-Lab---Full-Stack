@@ -1,8 +1,239 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  padding: 30px 20px;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
 }
 
-a {
-  color: #00B7FF;
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2rem;
+  letter-spacing: normal;
+}
+
+.subtitle {
+  margin-top: 10px;
+  margin-bottom: 24px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.message {
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  margin-bottom: 15px;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+.todo-item.completed {
+  border-color: #a3d9a5;
+  background: #eaf8ea;
+}
+
+.task-row,
+.edit-form,
+.add-form {
+  display: grid;
+  gap: 12px;
+}
+
+.task-row {
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+
+.task-details {
+  display: grid;
+  gap: 6px;
+}
+
+.task-text {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.status-label {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #e9ecef;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.inline {
+  display: inline-flex;
+}
+
+button,
+.button {
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+  background: #dc2626;
+  color: #fff;
+}
+
+button:hover,
+.button:hover {
+  background: #b91c1c;
+  opacity: 1;
+}
+
+button[type='submit'] {
+  background: #dc2626;
+  color: #fff;
+  box-shadow: none;
+}
+
+button[type='submit']:hover {
+  background: #b91c1c;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #dc2626;
+  color: #fff;
+  text-decoration: none;
+}
+
+.button.secondary {
+  background: #ef4444;
+  color: #fff;
+}
+
+.button.secondary:hover {
+  background: #dc2626;
+}
+
+a.button {
+  text-decoration: none;
+}
+
+label {
+  font-weight: bold;
+  color: #444;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  background: #fff;
+  color: #222;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+input[type='text']:focus {
+  outline: none;
+  border-color: #dc2626;
+  box-shadow: 0 0 3px rgba(220, 38, 38, 0.4);
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+}
+
+.edit-form {
+  padding: 12px;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.edit-form .action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-start;
+}
+
+.add-form {
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  margin: 30px 0;
+  background: #ddd;
+}
+
+  @media (max-width: 720px) {
+  .container {
+    padding: 20px;
+  }
+
+  .task-row,
+  .add-form {
+    grid-template-columns: 1fr;
+  }
+
+  .button-group,
+  .edit-form .action-row {
+    justify-content: stretch;
+  }
+
+  .button-group button,
+  .button-group a.button,
+  .edit-form button,
+  .edit-form a.button {
+    width: 100%;
+  }
 }
